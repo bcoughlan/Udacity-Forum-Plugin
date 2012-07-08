@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name       Udacity forum questions under video
 // @namespace  http://github.com/bcoughlan
-// @version    0.3
+// @version    0.4
 // @description Show forum questions under the video on Udacity.
 // @match      http://*.udacity.com/view#Course/**
 // @copyright  2012+, Barry Coughlan
@@ -77,7 +77,7 @@ contentEval(function () {
         this.data = null;
         this.questionsTab = null;
 
-        $('head').append('<link type="text/css" href="http://frink.nuigalway.ie/~grasshopa/udacityplugin/osqastyle.css" rel="stylesheet" media="all" />');
+        $('head').append('<link type="text/css" href="https://raw.github.com/bcoughlan/Udacity-Forum-Plugin/master/osqastyle.css" rel="stylesheet" media="all" />');
 
         if (initialHash[0]==='#') {
             initialHash = initialHash.slice(1);
