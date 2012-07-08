@@ -111,7 +111,7 @@ contentEval(function () {
         
         // Get OSQA HTML page for tag (in JSONP format via Yahoo Pipes - for cross-domain reasons)
         // Using HTML as the RSS feed can contain XML that Yahoo Pipes can't parse, also the RSS has no answer/views stats
-        var classID = hash.replace(/.*\/(cs\d+)\/.*/, '$1');
+        var classID = hash.replace(/.*Course\/([a-z]{2}\d+)\/.*/, '$1');
         this.lastAJAXrequest = $.getJSON(
             'http://pipes.yahoo.com/pipes/pipe.run?_id=6aada231b9edf9414aa79a87a6bcbe9a&_render=json&_callback=?',
             {'tag': tag, 'class': classID},
