@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name       Udacity forum questions under video
 // @namespace  http://github.com/bcoughlan
-// @version    0.41
+// @version    0.5
 // @description Show forum questions under the video on Udacity.
 // @match      http://*.udacity.com/view#Course/**
 // @copyright  2012+, Barry Coughlan
