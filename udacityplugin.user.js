@@ -10,14 +10,14 @@
 
 contentEval(function () {
     var Utils = {};
-	
+    
     Utils.findForumTagByURLHash = (function () {
         var regexes = [ 
-			[/Unit (\d+)/, 'unit'], 
-			[/Problem Set (\d+)/, 'ps'],
-			[/(\d+). Problem Set/, 'ps'],
-			[/(\d+). .*/, 'unit']
-		];
+            [/Unit (\d+)/, 'unit'], 
+            [/Problem Set (\d+)/, 'ps'],
+            [/(\d+). Problem Set/, 'ps'],
+            [/(\d+). .*/, 'unit']
+        ];
 
         return (function (hash, data) {
             if (hash[0]==='#') {
@@ -34,13 +34,13 @@ contentEval(function () {
             
             //Find tag prefix
             var tagPrefix=null;
-			for (var i=0; i<regexes.length; i++) {
-				var r = regexes[i][0].exec(unit.name); 
-				if (r !== null) {
-					tagPrefix = regexes[i][1]+r[1];
-					break;
-				}
-			}
+            for (var i=0; i<regexes.length; i++) {
+                var r = regexes[i][0].exec(unit.name); 
+                if (r !== null) {
+                    tagPrefix = regexes[i][1]+r[1];
+                    break;
+                }
+            }
             if (!tagPrefix) { return null; }
             
             //Find key of nugget that matches the ID in the URL
@@ -64,7 +64,7 @@ contentEval(function () {
         });
     })();
     Utils.addTab = function (slug, title, content) {
-		$('#tabs').tabs();
+        $('#tabs').tabs();
         $('#tabs').tabs('add', '#tab-'+slug, title);
         var anchor = $('#tab-'+slug);
         anchor.html(content);
@@ -111,7 +111,7 @@ contentEval(function () {
         
         // Get OSQA HTML page for tag (in JSONP format via Yahoo Pipes - for cross-domain reasons)
         // Using HTML as the RSS feed can contain XML that Yahoo Pipes can't parse, also the RSS has no answer/views stats
-		var classID = hash.replace(/.*\/(cs\d+)\/.*/, '$1');
+        var classID = hash.replace(/.*\/(cs\d+)\/.*/, '$1');
         this.lastAJAXrequest = $.getJSON(
             'http://pipes.yahoo.com/pipes/pipe.run?_id=6aada231b9edf9414aa79a87a6bcbe9a&_render=json&_callback=?',
             {'tag': tag, 'class': classID},
