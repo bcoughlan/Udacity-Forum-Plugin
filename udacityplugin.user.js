@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name       Udacity forum questions under video
 // @namespace  http://github.com/bcoughlan
-// @version    0.5
+// @version    0.51
 // @description Show forum questions under the video on Udacity.
 // @match      http://*.udacity.com/view#Course/**
 // @copyright  2012+, Barry Coughlan
@@ -15,8 +15,8 @@ contentEval(function () {
         var regexes = [ 
             [/Unit (\d+)/, 'unit'], 
             [/Problem Set (\d+)/, 'ps'],
-            [/(\d+). Problem Set/, 'ps'],
-            [/(\d+). .*/, 'unit']
+            [/(\d+)\. Problem Set/, 'ps'],
+            [/(\d+)\. .*/, 'unit']
         ];
 
         return (function (hash, data) {
