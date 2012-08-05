@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name       Udacity forum questions under video
 // @namespace  http://github.com/bcoughlan
-// @version    0.51
+// @version    0.6
 // @description Show forum questions under the video on Udacity.
 // @match      http://*.udacity.com/view#Course/**
 // @copyright  2012+, Barry Coughlan
@@ -83,7 +83,7 @@ contentEval(function () {
             initialHash = initialHash.slice(1);
         }
         initialHash = initialHash.replace('"', "%22");
-        $.ajax("/ajax?{%22data%22:{%22path%22:%22%23"+initialHash+"%22},%22method%22:%22course.get%22,%22version%22:%22dacity-93%22}", {
+        $.ajax("/ajax?{%22data%22:{%22path%22:%22%23"+initialHash+"%22},%22method%22:%22course.get%22,%22version%22:%22dacity-"+udacityJSVersion+"%22}", {
             datatype: "json",
             async: false,
             success: function(data) {
